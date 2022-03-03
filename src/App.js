@@ -1,12 +1,13 @@
+import React from "react";
 import "./styles.css";
-import Footer from "./Footer";
+import Footer from "./components/Footer";
 import {
   navSections,
   baselineLinks,
   socialLinks,
   legalText,
   brandLink,
-  brandLogo
+  brandLogo,
 } from "./mockData";
 
 export default () => {

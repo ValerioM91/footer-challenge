@@ -1,3 +1,30 @@
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
 body {
   font-family: "Roboto", sans-serif;
+  margin: 0;
+  word-wrap: break-word;
+  font-kerning: normal;
+  color: #555555;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: inherit;
+}
+
+*:before {
+  box-sizing: inherit;
+}
+
+*:after {
+  box-sizing: inherit;
 }
