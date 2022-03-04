@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import { TBaseLink, TNavSection, TSocialLink } from "../Types/DataTypes";
+import { TBaseLink, TNavSection, TSocialLink } from "../types/DataTypes";
 
 type TFooterContext = {
   brandLink?: string;
