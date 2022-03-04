@@ -4,7 +4,7 @@ import Component from "./NavSection";
 const NavSection = styled(Component)`
   margin-bottom: 0;
   .displayText {
-    padding: 2rem 0;
+    padding: 2rem 0.5rem;
     h6 {
       font-size: ${({ theme }) => theme.fontSizes.mobile.medium};
       margin-bottom: 0;
@@ -20,19 +20,45 @@ const NavSection = styled(Component)`
     }
   }
   @media ${({ theme }) => theme.device.mdDown} {
-    .displayText {
-      border-bottom: 1px solid ${({ theme }) => theme.colors.white};
-    }
-
     ${({ highlightOnMobile }) =>
-      !highlightOnMobile &&
-      css`
-        nav {
-          height: 0px;
-          overflow: hidden;
-          transition: height 0.2s;
-        }
-      `}
+      !highlightOnMobile
+        ? css`
+            .displayText {
+              display: flex;
+              justify-content: space-between;
+              border-bottom: 1px solid ${({ theme }) => theme.colors.white};
+            }
+            .displayText:after {
+              ${({ open }) =>
+                open
+                  ? css`
+                      content: "-";
+                    `
+                  : css`
+                      content: "+";
+                    `};
+              font-size: ${({ theme }) => theme.fontSizes.mobile.medium};
+            }
+            nav {
+              height: 0px;
+              overflow: hidden;
+              transition: height 0.2s;
+              padding-left: 2rem;
+            }
+          `
+        : css`
+            .displayText {
+              position: relative;
+              display: flex;
+              justify-content: space-between;
+            }
+            nav {
+              ul {
+                display: flex;
+                justify-content: space-between;
+              }
+            }
+          `}
     ul {
       padding: 2rem 0;
     }

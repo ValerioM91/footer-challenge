@@ -11,12 +11,18 @@ const FooterBody = styled(Component)`
     align-self: center;
     margin-bottom: 3.5rem;
   }
+  .navigation {
+    width: 100%;
+  }
   @media ${({ theme }) => theme.device.mdUp} {
     padding: 6rem 0 14rem;
     flex-direction: row;
     .logo {
       align-self: flex-start;
       margin-bottom: 0;
+    }
+    .navigation {
+      width: auto;
     }
   }
   @media ${({ theme }) => theme.device.lgUp} {
