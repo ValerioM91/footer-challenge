@@ -11,10 +11,20 @@ const Component = ({
 }: { className: string } & TNavSection) => {
   return (
     <div className={className}>
-      <h6>{displayText}</h6>
-      {navLinks?.map((navLink) => {
-        <NavLink key={navLink._id} {...navLink} />;
-      })}
+      <div className="displayText">
+        <h6>{displayText}</h6>
+      </div>
+      {navLinks && navLinks.length > 0 && (
+        <nav>
+          <ul>
+            {navLinks.map((navLink) => (
+              <li key={navLink._id}>
+                <NavLink {...navLink} />
+              </li>
+            ))}
+          </ul>
+        </nav>
+      )}
     </div>
   );
 };
