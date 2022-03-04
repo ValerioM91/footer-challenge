@@ -1,5 +1,5 @@
-import { createContext } from "react";
-import { TBaseLink, TNavSection, TSocialLink } from "../Types/DataTypes";
+import { createContext, useContext } from "react";
+import { TBaseLink, TNavSection, TSocialLink } from "../types/DataTypes";
 
 type TFooterContext = {
   brandLink?: string;
@@ -13,3 +13,5 @@ type TFooterContext = {
 const FooterContext = createContext<TFooterContext>({});
 
 export default FooterContext;
+
+export const useFooterContext = () => useContext(FooterContext);
