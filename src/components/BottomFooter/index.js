@@ -24,10 +24,10 @@ const BottomFooter = styled(Component)`
     display: block;
     margin: auto;
     width: fit-content;
-    color: white;
+    color: ${({ theme }) => theme.colors.white};
     opacity: 0.69;
     text-decoration: none;
-    font-size: 1.1rem;
+    font-size: ${({ theme }) => theme.fontSizes.mobile.small};
   }
 
   .baseline-link {
@@ -36,12 +36,12 @@ const BottomFooter = styled(Component)`
       opacity: 1;
     }
   }
-  @media (min-width: 765px) {
+  @media ${({ theme }) => theme.device.mdUp} {
     padding-top: 3.5rem;
     border-top: 1px solid white;
   }
 
-  @media (min-width: 960px) {
+  @media ${({ theme }) => theme.device.lgUp} {
     display: flex;
     align-items: center;
 
