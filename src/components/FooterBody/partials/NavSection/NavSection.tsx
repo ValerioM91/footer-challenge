@@ -8,9 +8,13 @@ const Component = ({
   navLinks,
   displayText,
   name,
-}: // open,
-// handleOpen,
-{ className: string; open: boolean } & TNavSection) => {
+  open,
+  handleOpen,
+}: {
+  className: string;
+  open: boolean;
+  handleOpen: () => void;
+} & TNavSection) => {
   const [height, setHeight] = useState(0);
   const heightRef = useRef<HTMLUListElement>(null);
 
@@ -19,15 +23,21 @@ const Component = ({
     setHeight(heightRef?.current?.clientHeight);
   }, []);
 
-  const open = true;
+  const handleClick = () => {
+    if (!highlightOnMobile) {
+      handleOpen();
+    }
+  };
 
   return (
     <div className={className}>
-      <div className="displayText">
+      <div className="displayText" onClick={handleClick}>
         <h6>{displayText}</h6>
       </div>
       {navLinks && navLinks.length > 0 && (
-        <nav style={{ height: `${open ? height : 0}px` }}>
+        <nav
+          style={!highlightOnMobile ? { height: `${open ? height : 0}px` } : {}}
+        >
           <ul ref={heightRef}>
             {navLinks.map((navLink) => (
               <li key={navLink._id}>

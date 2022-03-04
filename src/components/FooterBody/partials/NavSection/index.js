@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import Component from "./NavSection";
 
 const NavSection = styled(Component)`
@@ -23,12 +23,16 @@ const NavSection = styled(Component)`
     .displayText {
       border-bottom: 1px solid ${({ theme }) => theme.colors.white};
     }
-    nav {
-      height: 0px;
-      overflow: hidden;
-      transition: height 0.2s;
-    }
 
+    ${({ highlightOnMobile }) =>
+      !highlightOnMobile &&
+      css`
+        nav {
+          height: 0px;
+          overflow: hidden;
+          transition: height 0.2s;
+        }
+      `}
     ul {
       padding: 2rem 0;
     }
