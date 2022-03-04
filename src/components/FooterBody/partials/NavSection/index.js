@@ -19,6 +19,20 @@ const NavSection = styled(Component)`
       }
     }
   }
+  @media ${({ theme }) => theme.device.mdDown} {
+    .displayText {
+      border-bottom: 1px solid ${({ theme }) => theme.colors.white};
+    }
+    nav {
+      height: 0px;
+      overflow: hidden;
+      transition: height 0.2s;
+    }
+
+    ul {
+      padding: 2rem 0;
+    }
+  }
   @media ${({ theme }) => theme.device.mdUp} {
     .displayText {
       padding: 0;
@@ -30,6 +44,7 @@ const NavSection = styled(Component)`
   }
 
   @media ${({ theme }) => theme.device.lgUp} {
+    margin-bottom: 0;
   }
 `;
 
