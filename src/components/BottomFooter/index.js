@@ -30,6 +30,12 @@ const BottomFooter = styled(Component)`
     font-size: 1.1rem;
   }
 
+  .baseline-link {
+    transition: opacity 0.2s ease-in-out;
+    &:hover {
+      opacity: 1;
+    }
+  }
   @media (min-width: 765px) {
     padding-top: 3.5rem;
     border-top: 1px solid white;

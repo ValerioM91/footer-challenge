@@ -10,6 +10,14 @@ const Socials = styled(Component)`
   align-items: center;
   grid-template-columns: repeat(5, min-content);
   column-gap: 3rem;
+
+  a {
+    opacity: 0.69;
+    transition: opacity 0.2s ease-in-out;
+    &:hover {
+      opacity: 1;
+    }
+  }
 `;
 
 export default Socials;
