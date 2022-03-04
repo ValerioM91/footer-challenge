@@ -1,12 +1,19 @@
 import React from "react";
-import NavSection from "./partials/NavSection";
+import { useFooterContext } from "../../contexts/FooterContext";
+import NavSectionList from "./partials/NavSectionList";
 
 const Component = ({ className }: { className: string }) => {
+  const { brandLogo } = useFooterContext();
   return (
     <div className={className}>
-      <div className="logo">LOGO HERE</div>
+      {brandLogo && (
+        <div
+          className="logo"
+          dangerouslySetInnerHTML={{ __html: brandLogo }}
+        ></div>
+      )}
       <div className="navigation">
-        <NavSection />
+        <NavSectionList />
       </div>
     </div>
   );
