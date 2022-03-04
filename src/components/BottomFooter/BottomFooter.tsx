@@ -1,10 +1,12 @@
-import React from "react";
+import { useFooterContext } from "../../contexts/FooterContext";
 import Socials from "../Socials";
 
-const Component = ({ className, socialLinks, baselineLinks, legalText }) => {
+const Component = ({ className }: { className: string }) => {
+  const { baselineLinks, legalText } = useFooterContext();
+
   return (
     <div className={className}>
-      {socialLinks && <Socials socials={socialLinks} className="socials" />}
+      <Socials className="socials" />
       <div className="col-right">
         {baselineLinks &&
           baselineLinks.map((link) => {
