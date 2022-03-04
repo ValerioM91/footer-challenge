@@ -3,18 +3,27 @@ import Component from "./NavLink";
 
 const NavLink = styled(Component)`
   .footer-nav-link {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     color: ${({ theme }) => theme.colors.white};
     text-decoration: none;
     font-size: ${({ theme }) => theme.fontSizes.mobile.medium};
+    font-weight: 500;
 
-    .footer-nav-iconLink svg {
-      max-height: 2.5rem;
-      width: auto;
+    .footer-nav-iconLink {
+      transition: opacity 0.2s ease;
+
+      svg {
+        max-height: 2.5rem;
+        width: auto;
+      }
     }
 
     &:hover {
+      .footer-nav-iconLink {
+        opacity: 0.7;
+      }
+
       .footer-nav-textLink:after {
         right: 0;
       }
@@ -34,7 +43,7 @@ const NavLink = styled(Component)`
       height: 1px;
       left: 0;
       right: 100%;
-      transition: right 0.2s ease-in-out;
+      transition: right 0.4s ease;
     }
   }
 
@@ -48,11 +57,13 @@ const NavLink = styled(Component)`
     margin-left: 1rem;
     background-color: ${({ theme }) => theme.colors.white};
     color: ${({ theme }) => theme.colors.footerBackgroundColor};
-    transition: background-color 0.2s ease-in-out;
+    transition: background-color 0.4s ease-in;
   }
 
   @media ${({ theme }) => theme.device.mdUp} {
-    font-size: ${({ theme }) => theme.fontSizes.tablet.medium};
+    .footer-nav-link {
+      font-size: ${({ theme }) => theme.fontSizes.tablet.medium};
+    }
 
     .footer-nav-linkTag {
       margin-left: 1.8rem;
