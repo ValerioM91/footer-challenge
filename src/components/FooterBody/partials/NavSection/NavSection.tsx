@@ -2,8 +2,6 @@ import React from "react";
 import { TNavSection } from "../../../../types/DataTypes";
 import NavLink from "../NavLink";
 
-import { navSections } from "../../../../mockData";
-
 const Component = ({
   className,
   highlightOnMobile,
