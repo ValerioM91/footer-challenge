@@ -9,7 +9,7 @@ const Component = ({ className }: { className: string }) => {
   return (
     <div className={className}>
       {navSections.map((navSection, i) => (
-        <NavSection key={navSection._id || i} />
+        <NavSection key={navSection._id || `nav-section${i}`} {...navSection} />
       ))}
     </div>
   );
