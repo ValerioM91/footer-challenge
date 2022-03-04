@@ -7,10 +7,9 @@ const Component = ({ className }: { className: string }) => {
   return (
     <div className={className}>
       {brandLogo && (
-        <div
-          className="logo"
-          dangerouslySetInnerHTML={{ __html: brandLogo }}
-        ></div>
+        <a href="#" className="logo" title="Shogun">
+          <div dangerouslySetInnerHTML={{ __html: brandLogo }}></div>
+        </a>
       )}
       <div className="navigation">
         <NavSectionList />

@@ -20,19 +20,16 @@ const NavSection = styled(Component)`
     }
   }
   @media ${({ theme }) => theme.device.mdUp} {
-    margin-bottom: 9.5rem;
     .displayText {
       padding: 0;
       h6 {
         margin-bottom: 3rem;
-
         font-size: ${({ theme }) => theme.fontSizes.tablet.medium};
       }
     }
   }
 
   @media ${({ theme }) => theme.device.lgUp} {
-    margin-bottom: 0;
   }
 `;
 
