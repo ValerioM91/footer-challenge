@@ -10,6 +10,7 @@ import {
   brandLink,
   brandLogo,
 } from "../../mockData.js";
+import FooterBody from "../../components/FooterBody";
 
 const Component = ({ className }: { className: string }) => {
   return (
@@ -25,7 +26,7 @@ const Component = ({ className }: { className: string }) => {
     >
       <footer className={className}>
         <Container>
-          {/* TODO Footer body component */}
+          <FooterBody />
           {/* TODO Create useFooterContext hook */}
           {/* TODO Convert PropTypes into TS types, get props from context*/}
           <BottomFooter
