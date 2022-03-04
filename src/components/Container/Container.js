@@ -1,7 +1,0 @@
-import React from "react";
-
-const Component = ({ className, children }) => {
-  return <div className={className}>{children}</div>;
-};
-
-export default Component;

@@ -1,24 +1,16 @@
 import React from "react";
 import "./styles.css";
-import Footer from "./components/Footer";
-import {
-  navSections,
-  baselineLinks,
-  socialLinks,
-  legalText,
-  brandLink,
-  brandLogo,
-} from "./mockData";
+import Container from "./components/Container";
+
+import Footer from "./containers/Footer";
 
 export default () => {
   return (
-    <Footer
-      navSections={navSections}
-      baselineLinks={baselineLinks}
-      socialLinks={socialLinks}
-      legalText={legalText}
-      brandLink={brandLink}
-      brandLogo={brandLogo}
-    />
+    <>
+      <Container>
+        <section>Sample content</section>
+      </Container>
+      <Footer />
+    </>
   );
 };
