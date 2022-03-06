@@ -9,7 +9,7 @@ const FooterBody = styled(Component)`
   padding: 6rem 0 9.5rem;
   .logo {
     align-self: center;
-    margin-bottom: 3.5rem;
+    margin-bottom: 2rem;
   }
   .navigation {
     width: 100%;

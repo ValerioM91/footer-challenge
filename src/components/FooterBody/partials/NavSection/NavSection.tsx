@@ -7,20 +7,31 @@ const Component = ({
   highlightOnMobile,
   navLinks,
   displayText,
-  name,
   open,
   handleOpen,
 }: {
   className: string;
   open: boolean;
   handleOpen: () => void;
+  ref: any;
 } & TNavSection) => {
   const [height, setHeight] = useState(0);
   const heightRef = useRef<HTMLUListElement>(null);
 
-  useLayoutEffect(() => {
+  const handleSetHeight = () => {
     if (!heightRef.current) return;
-    setHeight(heightRef?.current?.clientHeight);
+    setHeight(heightRef.current.clientHeight);
+  };
+
+  useLayoutEffect(() => {
+    handleSetHeight();
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener("resize", handleSetHeight);
+    return () => {
+      window.removeEventListener("resize", handleSetHeight);
+    };
   }, []);
 
   const handleClick = () => {

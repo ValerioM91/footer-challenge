@@ -3,46 +3,50 @@ import Component from "./NavSection";
 
 const NavSection = styled(Component)`
   margin-bottom: 0;
+
   .displayText {
-    padding: 2rem 0.5rem;
+    padding: 2rem 0;
     h6 {
-      font-size: ${({ theme }) => theme.fontSizes.mobile.medium};
+      font-size: ${({ theme }) => theme.fontSizes.mobile.large};
       margin-bottom: 0;
     }
   }
-  nav {
-    ul {
-      li {
-        &:not(:last-child) {
-          margin-bottom: 3rem;
-        }
-      }
-    }
+
+  li:not(:last-child) {
+    margin-bottom: 3rem;
   }
+
   @media ${({ theme }) => theme.device.mdDown} {
-    ${({ highlightOnMobile }) =>
+    ul {
+      padding: 2rem 0;
+    }
+
+    ${({ highlightOnMobile, open }) =>
       !highlightOnMobile
         ? css`
             .displayText {
               display: flex;
               justify-content: space-between;
-              border-bottom: 1px solid ${({ theme }) => theme.colors.white};
-            }
-            .displayText:after {
-              ${({ open }) =>
-                open
-                  ? css`
-                      content: "-";
-                    `
-                  : css`
-                      content: "+";
-                    `};
-              font-size: ${({ theme }) => theme.fontSizes.mobile.medium};
+              position: relative;
+              &:before {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: -1rem;
+                right: -1rem;
+                height: 1px;
+                background-color: ${({ theme }) => theme.colors.white};
+              }
+              &:after {
+                font-size: ${({ theme }) => theme.fontSizes.mobile.large};
+                font-weight: 700;
+                content: ${open ? "'-'" : "'+'"};
+              }
             }
             nav {
               height: 0px;
               overflow: hidden;
-              transition: height 0.2s;
+              transition: height 0.4s ease-out;
               padding-left: 2rem;
             }
           `
@@ -52,24 +56,24 @@ const NavSection = styled(Component)`
               display: flex;
               justify-content: space-between;
             }
-            nav {
-              ul {
-                display: flex;
-                justify-content: space-between;
-              }
+            ul {
+              padding-top: 0;
+              display: flex;
+              justify-content: space-between;
             }
           `}
-    ul {
-      padding: 2rem 0;
-    }
   }
+
   @media ${({ theme }) => theme.device.mdUp} {
     .displayText {
       padding: 0;
       h6 {
         margin-bottom: 3rem;
-        font-size: ${({ theme }) => theme.fontSizes.tablet.medium};
+        font-size: ${({ theme }) => theme.fontSizes.tablet.large};
       }
+    }
+    nav {
+      height: auto !important;
     }
   }
 
