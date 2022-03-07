@@ -12,7 +12,9 @@ import {
 } from "../../mockData.js";
 import FooterBody from "../../components/FooterBody";
 
-const Component = ({ className }: { className: string }) => {
+type TProps = { className: string };
+
+const Component = ({ className }: TProps) => {
   return (
     <FooterContext.Provider
       value={{

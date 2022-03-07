@@ -2,7 +2,9 @@ import { useState, useEffect } from "react";
 import { useFooterContext } from "../../../../contexts/FooterContext";
 import NavSection from "../NavSection";
 
-const Component = ({ className }: { className: string }) => {
+type TProps = { className: string };
+
+const Component = ({ className }: TProps) => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [biggestNavSectionLength, setBiggestNavSectionLength] = useState(0);
   const [minHeight, setMinHeight] = useState(0);
@@ -41,7 +43,7 @@ const Component = ({ className }: { className: string }) => {
 
   useEffect(() => {
     setMinHeight(biggestNavSectionLength * 4.5 + notHighlighted * 5.6 + 15.7);
-  }, [biggestNavSectionLength]);
+  }, [biggestNavSectionLength, notHighlighted]);
 
   if (!navSections) return null;
 
@@ -59,7 +61,7 @@ const Component = ({ className }: { className: string }) => {
       {navSections.map((navSection, i) => (
         <NavSection
           minHeight={minHeight}
-          key={navSection._id || `nav-section${i}`}
+          key={navSection._id}
           {...navSection}
           open={activeIndex === i}
           handleOpen={() => handleOpen(i)}

@@ -1,7 +1,9 @@
 import { useFooterContext } from "../../contexts/FooterContext";
 import Socials from "../Socials";
 
-const Component = ({ className }: { className: string }) => {
+type TProps = { className: string };
+
+const Component = ({ className }: TProps) => {
   const { baselineLinks, legalText } = useFooterContext();
 
   return (

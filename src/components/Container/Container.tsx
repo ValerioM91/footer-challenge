@@ -1,12 +1,8 @@
 import React, { ReactNode } from "react";
 
-const Component = ({
-  className,
-  children,
-}: {
-  className: string;
-  children: ReactNode;
-}) => {
+type TProps = { className: string; children: ReactNode };
+
+const Component = ({ className, children }: TProps) => {
   return <div className={className}>{children}</div>;
 };
 

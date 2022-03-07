@@ -2,6 +2,12 @@ import React, { useRef, useLayoutEffect, useEffect, useState } from "react";
 import { TNavSection } from "../../../../types/DataTypes";
 import NavLink from "../NavLink";
 
+type TProps = {
+  className: string;
+  open: boolean;
+  handleOpen: () => void;
+} & TNavSection;
+
 const Component = ({
   className,
   highlightOnMobile,
@@ -9,12 +15,7 @@ const Component = ({
   displayText,
   open,
   handleOpen,
-}: {
-  className: string;
-  open: boolean;
-  handleOpen: () => void;
-  ref: any;
-} & TNavSection) => {
+}: TProps) => {
   const [height, setHeight] = useState(0);
   const heightRef = useRef<HTMLUListElement>(null);
 

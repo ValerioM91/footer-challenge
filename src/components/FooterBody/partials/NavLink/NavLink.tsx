@@ -1,13 +1,11 @@
 import React from "react";
 import { TNavLink } from "../../../../types/DataTypes";
 
-const Component = ({
-  className,
-  url,
-  tag,
-  displayText,
-  icon,
-}: { className: string } & TNavLink) => {
+type TProps = {
+  className: string;
+} & TNavLink;
+
+const Component = ({ className, url, tag, displayText, icon }: TProps) => {
   return (
     <div className={className}>
       <a href={url} className="footer-nav-link" title={displayText}>

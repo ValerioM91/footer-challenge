@@ -11,6 +11,8 @@ const NavLink = styled(Component)`
     font-weight: 500;
 
     .footer-nav-iconLink {
+      display: flex;
+      align-items: center;
       transition: opacity 0.2s ease;
 
       svg {

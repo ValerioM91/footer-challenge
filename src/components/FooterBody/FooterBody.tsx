@@ -2,7 +2,9 @@ import React from "react";
 import { useFooterContext } from "../../contexts/FooterContext";
 import NavSectionList from "./partials/NavSectionList";
 
-const Component = ({ className }: { className: string }) => {
+type TProps = { className: string };
+
+const Component = ({ className }: TProps) => {
   const { brandLogo } = useFooterContext();
   return (
     <div className={className}>
