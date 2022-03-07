@@ -29,8 +29,6 @@ const Component = ({ className }: TProps) => {
       <footer className={className}>
         <Container>
           <FooterBody />
-          {/* TODO Create useFooterContext hook */}
-          {/* TODO Convert PropTypes into TS types, get props from context*/}
           <BottomFooter
             socialLinks={socialLinks}
             baselineLinks={baselineLinks}
